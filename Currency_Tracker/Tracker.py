@@ -26,7 +26,7 @@ def taiwanbank(name=None):
     df = df.iloc[:,[0,3,4,1,2]]
     df.columns=['幣別','即期匯率-本行買入','即期匯率-本行賣出','現金匯率-本行買入','現金匯率-本行賣出']
     df.insert(0, '銀行', ['台灣銀行' for _ in range(len(df))], True)
-    df['幣別']=df['幣別'].str.extract('\((\w+)\)')
+    df['幣別'] = df['幣別'].str.extract(r'\((\w+)\)')
 
     if any(df['幣別'] == name):
         return df[df['幣別'] == name]
