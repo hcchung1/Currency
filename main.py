@@ -11,7 +11,7 @@ if __name__=="__main__":
         buy  = float(input('目標買入價:'))
         target.append(sell)
         target.append(buy)
-        token = ''  # Line Notify ID
+        token = '6HCRSMnI4HcIBkDlxZSnZeK9GrmzA4alkqASPwEDKjV'  # Line Notify ID
         tracker(currency,target,token)
 
     except ValueError:
