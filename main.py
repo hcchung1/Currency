@@ -12,6 +12,7 @@ def time_on_website():
         if rate_date_tag:
             rate_date = rate_date_tag.get_text(strip=True)
             print(f"匯率更新日期時間: {rate_date}")
+            return rate_date
         else:
             print("找不到匯率更新日期時間")
 
@@ -65,7 +66,7 @@ def lineNotifyMessage(token, msg):
     r = requests.post("https://notify-api.line.me/api/notify", headers = headers, params = payload)
     return r.status_code
 
-time_on_website()
+rate_date = time_on_website()
 
 rates = get_jpy_exchange_rates()
 if rates:
@@ -76,7 +77,8 @@ if rates:
 else:
     print("無法取得日圓匯率") 
 
-token = '6HCRSMnI4HcIBkDlxZSnZeK9GrmzA4alkqASPwEDKjV'
-message = f"【日幣即時匯率通知】\n日圓現金買入匯率: {rates['cash_buying_rate']}\n日圓現金賣出匯率: {rates['cash_selling_rate']}\n日圓即期買入匯率: {rates['spot_buying_rate']}\n日圓即期賣出匯率: {rates['spot_selling_rate']}"
+token = 'oC2FSw6ud4QTx7fat2jsIbskIxRma4v0XinpQNe7tf5'
+message = f"\n更新時間: {rate_date}\n現金買入: {rates['cash_buying_rate']}\n現金賣出: {rates['cash_selling_rate']}\n即期買入: {rates['spot_buying_rate']}\n即期賣出: {rates['spot_selling_rate']}"
+# message = f"\n日圓現金買入匯率: {rates['cash_buying_rate']}\n日圓現金賣出匯率: {rates['cash_selling_rate']}\n日圓即期買入匯率: {rates['spot_buying_rate']}\n日圓即期賣出匯率: {rates['spot_selling_rate']}"
 
 lineNotifyMessage(token, message)
