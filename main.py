@@ -77,6 +77,6 @@ else:
     print("無法取得日圓匯率") 
 
 token = '6HCRSMnI4HcIBkDlxZSnZeK9GrmzA4alkqASPwEDKjV'
-message = f"\n日圓現金買入匯率: {rates['cash_buying_rate']}\n日圓現金賣出匯率: {rates['cash_selling_rate']}\n日圓即期買入匯率: {rates['spot_buying_rate']}\n日圓即期賣出匯率: {rates['spot_selling_rate']}"
+message = f"【日幣即時匯率通知】\n日圓現金買入匯率: {rates['cash_buying_rate']}\n日圓現金賣出匯率: {rates['cash_selling_rate']}\n日圓即期買入匯率: {rates['spot_buying_rate']}\n日圓即期賣出匯率: {rates['spot_selling_rate']}"
 
 lineNotifyMessage(token, message)
