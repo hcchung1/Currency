@@ -1,9 +1,9 @@
-name: Daily workflow
+name: Test workflow
 
 # Controls when the action will run. Workflow runs at 03:00 UTC every day (which is 11:00 GMT+8)
 on:
   schedule:
-    - cron: '07 13 * * *'
+    - cron: '25 13 * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
