@@ -82,3 +82,5 @@ message = f"\n更新時間: {rate_date}\n現金買入: {rates['cash_buying_rate'
 # message = f"\n日圓現金買入匯率: {rates['cash_buying_rate']}\n日圓現金賣出匯率: {rates['cash_selling_rate']}\n日圓即期買入匯率: {rates['spot_buying_rate']}\n日圓即期賣出匯率: {rates['spot_selling_rate']}"
 
 lineNotifyMessage(token, message)
+token = 'yB7TSamtaWNYEzG8lNPKWhlrgtCEM30rFYWy7n9eecQ'
+lineNotifyMessage(token, message)
