@@ -13,3 +13,5 @@ Replace the **token** with your LINE Notify ID
 * Numpy
 * Pandas
 * requests
+
+## Updated at 2024/10/16
