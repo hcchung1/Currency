@@ -83,4 +83,12 @@ if rates and bot_token and chat_id:
     )
     telegram_send_message(bot_token, chat_id, message)
 else:
-    print("無法送出 Telegram 訊息，請檢查匯率或環境變數")
+    missing = []
+    if not bot_token:
+        missing.append("TELEGRAM_BOT_TOKEN")
+    if not chat_id:
+        missing.append("TELEGRAM_CHAT_ID")
+    if not rates:
+        missing.append("rates")
+    missing_text = ", ".join(missing) if missing else "unknown"
+    print(f"無法送出 Telegram 訊息，請檢查：{missing_text}")
